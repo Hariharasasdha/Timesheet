@@ -10,7 +10,7 @@ class Config:
     CACHE_REDIS_DB = 0
     CACHE_REDIS_URL = REDIS_URL = os.getenv("redis://default:redispw@localhost:49158")
     CACHE_DEFAULT_TIMEOUT = 500
-    SQLALCHEMY_DATABASE_URI = os.getenv('COMMON_DB_URL',"postgresql+psycopg2://ipss_dev:AT4eqHUYr98475fhdNcuaRsDev@142.93.209.90:5433/ipss_dev")
+    SQLALCHEMY_DATABASE_URI = r'sqlite:///C:\\Users\\Hariharasasdha\\Desktop\ecom.s3db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     pool_pre_ping = True
     SQLALCHEMY_ECHO = True
