@@ -1,0 +1,74 @@
+server {
+    listen       8080;
+    server_name  _;
+
+    add_header 'Access-Control-Allow-Origin' '*' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS, PATCH, PUT, DELETE';
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization';
+
+    location /swaggerui {
+        proxy_pass http://127.0.0.1:5000;
+    }
+
+
+    location /assign_task {
+        proxy_pass   http://127.0.0.1:5000;
+    }
+
+    location = /assign_task/swagger.json {
+        proxy_pass   http://127.0.0.1:5000/swagger.json;
+    }
+
+     location /timesheet {
+        proxy_pass   http://127.0.0.1:5001;
+    }
+
+    location = /timesheet/swagger.json {
+        proxy_pass   http://127.0.0.1:5001/swagger.json;
+    }
+
+     location /ts_organization_report {
+        proxy_pass   http://127.0.0.1:5002;
+    }
+
+    location = /ts_organization_report/swagger.json {
+        proxy_pass   http://127.0.0.1:5002/swagger.json;
+    }
+
+     location /project {
+        proxy_pass   http://127.0.0.1:5003;
+    }
+
+    location = /project/swagger.json {
+        proxy_pass   http://127.0.0.1:5003/swagger.json;
+    }
+    location /task {
+        proxy_pass   http://127.0.0.1:5004;
+    }
+
+    location = /task/swagger.json {
+        proxy_pass   http://127.0.0.1:5004/swagger.json;
+    }
+    location /category_config {
+        proxy_pass   http://127.0.0.1:5005;
+    }
+
+    location = /category_config/swagger.json {
+        proxy_pass   http://127.0.0.1:5005/swagger.json;
+    }
+    location /page_config {
+        proxy_pass   http://127.0.0.1:5006;
+    }
+
+    location = /page_config/swagger.json {
+        proxy_pass   http://127.0.0.1:5006/swagger.json;
+    }
+    location /ts_report {
+        proxy_pass   http://127.0.0.1:5007;
+    }
+
+    location = /ts_report/swagger.json {
+        proxy_pass   http://127.0.0.1:5007/swagger.json;
+    }
+}
+
